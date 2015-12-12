@@ -13,13 +13,15 @@ geometry:
     -   twoside
 mainfont: Times New Roman
 institution: Universidad Técnica Federico Santa María
-academic_unit: Departamento de Jirafología
+academic_unit: Departamento de Electrónica
 city: Valparaíso
 country: Chile
-title: Ergonomía de Jirafas
-author: Períco Pérez Palotes
-degree: Ingeniero Civil de Jirafas Levitantes
-professor: Juan Josefo Jara Jote
+title: >
+    Aplicación Móvil para Aprendizaje Activo en Aulas
+    SCALE-UP
+author: Cristóbal Edmundo Ganter Horst
+degree: Ingeniero Civil Electrónico
+professor: Werner Creixell
 month: Enero
 year: 2015
 advertencia: true

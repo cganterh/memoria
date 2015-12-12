@@ -1,1 +1,9 @@
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Le agradezco a mi familia por brindarme todo el apoyo para
+lograr mis metas. Pero en especial le agradezco a mi madre,
+por ser la persona que me apoyó incondicionalmente, no solo
+con palabras, sino que con acciones. Y que es para mi un
+ejemplo a seguir.
+
+Además, quiero agradecer a mis profesores. Por enseñarme y
+por ser un ejemplo de esfuerzo, dedicación y amor por el
+trabajo.
