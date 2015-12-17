@@ -33,7 +33,7 @@ docencia, ya que existe evidencia de que puede producir
 buenos resultados en el aprendizaje de los estudiantes.
 \cite{prince} Dentro de los métodos de enseñanza que se
 pueden clasificar como Active Learning se destacan:
-Interactive learning with real-time response [2],
+Interactive learning with real-time response \cite{tsai},
 Collaborative learning y Problem-based learning.
 \cite{prince} Interactive learning with real-time response
 se refiere a métodos de enseñanza que utilicen tecnología
@@ -44,7 +44,7 @@ los alumnos trabajen juntos con un objetivo en común.
 Finalmente los métodos pertenecientes al grupo Problem-based
 learning son los que plantean un problema al inicio de cada
 sesión con el fin de motivar el desarrollo activo de la
-clase. Los trabajos realizados en [2] [3] [5] [6] indican
+clase. Los trabajos realizados en \cite{tsai} \cite{pejcinovic} \cite{deslauriers} [6] indican
 que la utilización de métodos de enseñanza de tipo Active
 Learning mejora notablemente la participación y aprendizaje
 de los alumnos. Sin embargo, esto no quiere decir que los
