@@ -159,6 +159,14 @@ $if(definiciones)$
     \usepackage[xindy,section]{glossaries}
     \loadglsentries{$definiciones$}
     \makeglossaries
+
+    \renewcommand*{\glslinkcheckfirsthyperhook}{%
+        \ifglsused{\glslabel}%
+        {%
+            \setkeys{glslink}{hyper=false}%
+        }%
+        {}%
+    }
 $endif$
 
 \usepackage{etoolbox}
@@ -175,6 +183,9 @@ $endif$
 \patchcmd{\tableofcontents}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
 \patchcmd{\listoftables}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
 \patchcmd{\listoffigures}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
+
+\usepackage{caption}
+\usepackage{cleveref}
 
 \begin{document}
     \pagenumbering{roman}
