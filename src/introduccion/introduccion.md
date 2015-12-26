@@ -39,7 +39,7 @@ buenos resultados en el aprendizaje de los estudiantes.
 Dentro de los métodos de enseñanza que se pueden clasificar
 como "Active Learning" se destacan: "Interactive learning
 with real-time response" \cite{tsai}, "Collaborative
-learning" y "Problem-based learning". \cite{prince}
+learning" y "Problem-based learning" \cite{prince}.
 "Interactive learning with real-time response" se refiere a
 métodos de enseñanza que utilicen tecnología interactiva en
 la que los alumnos puedan interactuar, entre ellos y con el
@@ -137,13 +137,13 @@ La tecnología móvil está cambiando la forma en que los seres
 humanos se comunican, socializan, trabajan y se organizan.
 La adopción global de teléfonos móviles inteligentes ha
 crecido desde un 4% en 2008 a un 44% en 2015. Y se espera
-que llegue a un 65% para el año 2020. \cite{gsmai}
+que llegue a un 65% para el año 2020 \cite{gsmai}.
 
 Este enorme crecimiento en la utilización de los teléfonos
 inteligentes está sustentado en el valor que los usuarios
 ven en las aplicaciones móviles. Es así como la industria de
 las aplicaciones se ha convertido, en poco tiempo, en una
-industria de cien mil millones de dolares. \cite{mills} Cada
+industria de cien mil millones de dolares \cite{mills}. Cada
 vez es mayor la cantidad y diversidad de aplicaciones
 disponibles que cambian la forma en que los seres humanos
 realizan sus actividades en los más diversos ámbitos. Desde
@@ -177,8 +177,8 @@ de las aplicaciones a fuentes de datos remotas a través de
 internet. El modelo de distribución de aplicaciones
 \gls{web} se diferencia del modelo tradicional, en que es
 bajo demanda y la aplicación no permanece instalada en el
-cliente. Mientras que con el modelo tradicional hay que
-instalar previamente una aplicación para poder usarla.
+\gls{cliente}. Mientras que con el modelo tradicional hay
+que instalar previamente una aplicación para poder usarla.
 Además, la persona que publica la aplicación tiene que
 registrarla en una tienda de aplicaciones. Es por esto que
 acceder a una aplicación \gls{web} suele ser más rápido y
@@ -241,4 +241,4 @@ las características que se desean:
 -   ¿De qué manera se gestionarán los distintos usuarios y
     grupos?
 -   ¿Se necesitará hardware adicional como etiquetas
-    \gls{nfc}/\gls{qr} o un servidor?
+    \gls{nfc}/\gls{qr} o un \gls{servidor}?

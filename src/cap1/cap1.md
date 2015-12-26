@@ -27,7 +27,7 @@ La primera, de menos similitud a lo que se desarrolló en
 este trabajo, se llama Plickers. Esta es una herramienta
 simple que permite a los profesores recoger datos de
 evaluación en tiempo real sin la necesidad de que los
-estudiantes tengan un dispositivo. \cite{plickers} Plickers
+estudiantes tengan un dispositivo \cite{plickers}. Plickers
 permite que los estudiantes respondan preguntas de
 alternativas levantando tarjetas impresas con códigos. Luego
 el profesor utiliza la aplicación móvil para leer los
@@ -57,7 +57,7 @@ Las funciones de Learning Catalytics son similares a lo que
 se desea lograr en este trabajo. Sin embargo Learning
 Catalytics está pensado para salas convencionales, es de
 código cerrado y para usarlo se debe pagar desde 20 USD
-anuales por alumno. \cite{lc} Bajo estas condiciones se
+anuales por alumno \cite{lc}. Bajo estas condiciones se
 descarta la posibilidad de hacer una modificación al
 software de Learning Catalytics para lograr el objetivo
 planteado en este trabajo.
