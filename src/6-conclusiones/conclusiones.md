@@ -1,5 +1,5 @@
-Conclusiones
-============
+Conclusiones y Trabajo Futuro
+=============================
 
 En esta sección se deben presentar las conclusiones
 generales del trabajo, y que sean el análisis cuidadoso del

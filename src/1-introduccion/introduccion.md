@@ -116,7 +116,7 @@ han sido probados sistemáticamente y que han demostrado
 poder llegar a diversos tipos de estudiante.
 \cite{handelsman}
 
-[f_mapa]: src/introduccion/fig/mapa.pdf
+[f_mapa]: src/1-introduccion/fig/mapa.pdf
 
 Tecnología Web Móvil
 --------------------

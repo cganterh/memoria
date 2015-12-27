@@ -165,7 +165,7 @@ bibliotecas de menor importancia:
   tecnologías. Una tecnología que se encuentra en la parte
   superior de una flecha, depende de la tecnología que está
   en la parte inferior.
-  \label{f_stack}](src/cap2/fig/stack.pdf)
+  \label{f_stack}](src/3-propuesta/fig/stack.pdf)
 
 ###Tecnologías del cliente
 
@@ -255,13 +255,13 @@ En la \cref{f_arq} se muestra la arquitectura general de la
 aplicación. El bloque superior con etiqueta *Cliente*
 representa al navegador utilizado por los usuarios. La nube
 con la etiqueta *Internet* representa a la red utilizada
-para comunicar al \gls{cliente} con el servidor, así como también
-a servicios de terceros que puedan encontrarse en esa red.
-Todos los componentes que se encuentran por debajo de la
-nube *Internet* forman parte del servidor.
+para comunicar al \gls{cliente} con el \gls{servidor}, así
+como también a servicios de terceros que puedan encontrarse
+en esa red. Todos los componentes que se encuentran por
+debajo de la nube *Internet* forman parte del servidor.
 
 ![Arquitectura general de la aplicación.
-  \label{f_arq}](src/cap2/fig/arquitectura.pdf)
+  \label{f_arq}](src/3-propuesta/fig/arquitectura.pdf)
 
 La aplicación funciona utilizando módulos[^modulos]. Cada
 módulo es una agrupación de clases, pudiendo tener una o más
@@ -366,12 +366,12 @@ requerimiento a la aplicación: vacío (`/`), de código
 `LoginHandler` o `MSGHandler`. Estas tres clases aparecen
 representadas en la \cref{f_arq} debajo de la nube
 *Internet*. Y son la interfaz a través de la cual se
-comunica el servidor con el \gls{cliente}. De esta forma,
-los requerimientos vacíos y de código (`/` y `/l1bs8`) son
-atendidos por un `GUIHandler`; los requerimientos de
-autenticación (`/singin`) son atendidos por `LoginHandler`;
-y los requerimientos de conexión \gls{ws} son atendidos por
-`MSGHandler`.
+comunica el \gls{servidor} con el \gls{cliente}. De esta
+forma, los requerimientos vacíos y de código (`/` y
+`/l1bs8`) son atendidos por un `GUIHandler`; los
+requerimientos de autenticación (`/singin`) son atendidos
+por `LoginHandler`; y los requerimientos de conexión
+\gls{ws} son atendidos por `MSGHandler`.
 
 Los códigos a los que hacen referencia los requerimientos de
 código, son secuencias de cinco caracteres alfanuméricos y
@@ -436,29 +436,31 @@ Google, se envía un requerimiento de autenticación
 (`/signin`) a `LoginHandler`. Utilizando los datos enviados
 con el requerimiento, `LoginHandler` redirecciona al cliente
 a una pagina de autenticación de Google. Una vez terminada
-la autenticación, el cliente envía un código generado por
-Google a `LoginHandler`. Con este código, `LoginHandler`
+la autenticación, el \gls{cliente} envía un código generado
+por Google a `LoginHandler`. Con este código, `LoginHandler`
 puede acceder por su cuenta a los datos del usuario, crear
 un nuevo identificador de sesión, firmar el identificador de
 sesión con el secreto asignado al usuario y enviarlo al
 cliente. Una vez que el nuevo identificador de sesión es
-almacenado en el cliente, el cliente hace un nuevo
-requerimiento a `GUIHandler`. Esta vez, el \gls{frontend} si
-encontrará el identificador de sesión, y en vez de mostrar
-el panel `HomeLockingPanel`, se mostrará un panel de carga y
-comenzará el proceso de conexión \gls{ws}.
+almacenado en el \gls{cliente}, el \gls{cliente} hace un
+nuevo requerimiento a `GUIHandler`. Esta vez, el
+\gls{frontend} si encontrará el identificador de sesión, y
+en vez de mostrar el panel `HomeLockingPanel`, se mostrará
+un panel de carga y comenzará el proceso de conexión
+\gls{ws}.
 
-Cuando se carga el \gls{frontend} en el cliente, y ya existe
-un identificador de sesión, entonces el \gls{frontend} envía
-un requerimiento de conexión \gls{ws}. Este requerimiento es
-atendido por una instancia de `MSGHandler`. Cuando la
-instancia de `MSGHandler` es creada, esta además crea una
-instancia de la clase `WSClass` (etiqueta *COM* verde en
-\cref{f_arq}) de cada módulo de la aplicación. De esta forma
-el componente gráfico (`BoilerUIModule`, etiqueta *UI* azul
-en \cref{f_arq}) de cada módulo en el \gls{frontend}, puede
-comunicarse con su contraparte en el \gls{servidor} a
-través del nuevo canal \gls{ws}.
+Cuando se carga el \gls{frontend} en el \gls{cliente}, y ya
+existe un identificador de sesión, entonces el
+\gls{frontend} envía un requerimiento de conexión \gls{ws}.
+Este requerimiento es atendido por una instancia de
+`MSGHandler`. Cuando la instancia de `MSGHandler` es creada,
+esta además crea una instancia de la clase `WSClass`
+(etiqueta *COM* verde en \cref{f_arq}) de cada módulo de la
+aplicación. De esta forma el componente gráfico
+(`BoilerUIModule`, etiqueta *UI* azul en \cref{f_arq}) de
+cada módulo en el \gls{frontend}, puede comunicarse con su
+contraparte en el \gls{servidor} a través del nuevo canal
+\gls{ws}.
 
 El primer mensaje que es intercambiado por el canal \gls{ws}
 es de tipo (`'type'`) `'session.start'`, y contiene el
@@ -501,13 +503,66 @@ dependiendo de lo que se desee implementar.
     módulos de la aplicación contener varios archivos.
 
 [uimodule]: http://www.tornadoweb.org/en/stable/web.html#tornado.web.UIModule
-[Lógica de acceso]: #lógica-de-acceso
-[Flujo de la aplicación]: #flujo-de-la-aplicación
-[Interfaz Gráfica]: #interfaz-gráfica
 
 ###Arquitectura de módulos
 
-Lorem
+La arquitectura descrita en la sección anterior permite, de
+manera abstracta, diseñar grupos de módulos y sus
+relaciones. Utilizando los requerimientos obtenidos, se ha
+diseñado el conjunto de módulos se representa en la
+\cref{f_mod}. Existen dos módulos de servicio:
+*Presentación* y *Control Remoto*. Ambos módulos prestan un
+servicio a los demás módulos. El módulo *Presentación*
+es un panel que permite mostrar contenidos en pantalla
+completa. En él se puede mostrar cualquier elemento
+\gls{html}, ya sea texto, imágenes, videos, simulaciones o
+juegos. El módulo *Control Remoto* permite a otros módulos
+mostrar botones. Su objetivo es proveer un panel desde el
+que se pueda acceder a las funciones más importantes de la
+aplicación.
+
+![Arquitectura de los módulos de la aplicación.
+  \label{f_mod}](src/3-propuesta/fig/modulos.pdf)
+
+El módulo *Diapositivas* permite cargar diapositivas en
+distintos formatos al sistema. Utiliza al módulo
+*Presentación* para poder mostrar un archivo de
+diapositivas. También utiliza al modulo *Control Remoto*
+para instanciar botones que permitan controlar la
+presentación. Este módulo solo se carga en el cliente cuando
+un usuario es profesor. Además, permite mostrar diapositivas
+en un computador mientras se utiliza el celular como control
+remoto.
+
+Finalmente, utilizando los servicios del modulo *Preguntas*,
+el módulo *Diapositivas* permite lanzar preguntas a los
+alumnos. El módulo *Preguntas* permite escribir sub-modulos
+que implementan diferentes tipos de preguntas. Para este
+trabajo se implementará solo el sub-módulo para preguntas de
+alternativas. Además, es posible desplegar los resultados de
+las preguntas en el módulo *Presentación*, utilizando un
+botón instanciado en el módulo *Control Remoto*.
+
+Existe un conjunto de módulos de sistema que no han sido
+mencionados y no aparecen en la \cref{f_mod}. Estos son: 
+
+*   Courses
+*   Router
+*   Critical
+*   Home
+*   Lesson Setup
+*   Loading
+*   Student Setup
+*   Connection Indicator
+*   Don't Understand
+*   User
+
+Estos módulos proveen funciones de sistema y parte de la
+interfaz de usuario, pero no son de mayor importancia en lo
+que respecta a lo que la aplicación puede hacer. Algunos de
+ellos serán descritos en mayor detalle en las secciones
+[Lógica de acceso], [Flujo de la aplicación] e [Interfaz
+Gráfica].
 
 Organización del código
 -----------------------
@@ -530,3 +585,8 @@ Flujo de la aplicación
 \cref{dp1}, \cref{dp2}, \cref{dp3}, \cref{dp4}, \cref{dp5}
 
 \cref{dp2,dp3,dp5}
+
+
+[Lógica de acceso]: #lógica-de-acceso
+[Flujo de la aplicación]: #flujo-de-la-aplicación
+[Interfaz Gráfica]: #interfaz-gráfica
