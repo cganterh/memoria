@@ -50,10 +50,10 @@ se llegó a las siguientes conclusiones:
 8.  El sistema debe ser robusto a las perdidas de conexión a
     internet.
 
-Finalmente se determinó una una serie de módulos mínimos,
-según las necesidades actuales de las salas SCALE-UP. Estos
-módulos serán descritos en detalle en las siguientes
-secciones.
+Finalmente, se diseñó una serie de módulos mínimos que
+cumplieran con las necesidades actuales de las salas
+SCALE-UP. Estos módulos serán descritos en detalle en la
+sección [Arquitectura de módulos].
 
 Principios de diseño
 --------------------
@@ -62,7 +62,7 @@ Principios de diseño
     computacionalmente y con respecto a las dinámicas
     desarrolladas entre los actores.\label[dp]{dp1}
 
-2.  El sistema debe ser robusto a las perdidas de conexión.
+2.  El sistema debe ser robusto a las pérdidas de conexión.
     \label[dp]{dp2}
 
 3.  Aunque deba sacrificarse funcionalidad, el software debe
@@ -78,11 +78,11 @@ Tecnologías
 -----------
 
 Una aplicación \gls{web} normalmente está constituida por
-dos unidades independientes que se comunican entre si:
+dos unidades independientes que se comunican entre sí:
 \gls{backend} y \gls{frontend}. El \gls{backend} suele
 ejecutarse en un \gls{servidor} y usar una base de datos
 para organizar la información de los usuarios. El
-\gls{frontend} suele ejecutarse en un computador del usuario
+\gls{frontend} suele ejecutarse en el terminal de un usuario
 (\gls{cliente}).
 
 En las siguientes secciones se describirán las tecnologías
@@ -193,8 +193,8 @@ utiliza HTTP, \gls{ws} y \gls{json}. Primero, el
 Basado en este requerimiento el \gls{servidor} empaqueta la
 aplicación y la envía al \gls{cliente}. Cuando la aplicación
 llega el \gls{cliente}, esta se ejecuta y crea una conexión
-\gls{ws} permanente con el \gls{servidor} a través de la que
-se intercambian mensajes codificados con \gls{json}.
+\gls{ws} permanente con el \gls{servidor}, a través de la
+que se intercambian mensajes codificados con \gls{json}.
 
 ###Tecnologías de apoyo
 
@@ -202,6 +202,26 @@ Además de las tecnologías mencionadas anteriormente, que
 tienen relación directa con el funcionamiento de la
 aplicación, se han utilizado diversas tecnologías que
 facilitan el desarrollo del proyecto:
+
+CoffeeScript
+
+:   es un pequeño lenguaje que se compila a \gls{js}. Es un
+    intento de exponer las partes buenas de \gls{js} de una
+    manera sencilla. El código se compila uno a uno en
+    \gls{js} equivalente, y no hay interpretación en tiempo
+    de ejecución. Se puede usar cualquier biblioteca
+    \gls{js} existente sin problemas desde CoffeeScript (y
+    viceversa). La salida compilada es legible, trabajará en
+    cualquier intérprete de \gls{js}, y tiende a ser tan
+    rápida o más rápida que el \gls{js} equivalente escrito
+    a mano \cite{coffeescript}.
+
+Git
+
+:   es un sistema de control de versiones distribuido, libre
+    y de código abierto, diseñado para manejar con rapidez y
+    eficiencia desde pequeños hasta grandes proyectos
+    \cite{git}.
 
 Sass
 
@@ -223,19 +243,6 @@ Bourbon
     Sass \cite{bourbon}. Bourbon permite escribir \gls{css}
     con una mayor compatibilidad, ya que maneja
     automáticamente la inclusión de prefijos de navegador.
-
-CoffeeScript
-
-:   es un pequeño lenguaje que se compila a \gls{js}. Es un
-    intento de exponer las partes buenas de \gls{js} de una
-    manera sencilla. El código se compila uno a uno en
-    \gls{js} equivalente, y no hay interpretación en tiempo
-    de ejecución. Se puede usar cualquier biblioteca
-    \gls{js} existente sin problemas desde CoffeeScript (y
-    viceversa). La salida compilada es legible, trabajará en
-    cualquier intérprete de \gls{js}, y tiende a ser tan
-    rápida o más rápida que el \gls{js} equivalente escrito
-    a mano \cite{coffeescript}.
 
 Sphinx
 
@@ -310,7 +317,7 @@ formar parte de un módulo de la aplicación:
     objetos \gls{json} en una aplicación \gls{web} a través
     de HTTP. El requisito mínimo para enviar un diccionario
     por un adaptador `PubSub` es que contenga la clave
-    `'type'`. El objeto, normalmente un una cadena de texto,
+    `'type'`. El objeto, normalmente una cadena de texto,
     asociado a la clave `'type'` tiene como objetivo
     identificar el formato de las otras claves del
     diccionario. Cuando un objeto conoce el formato asociado
@@ -323,9 +330,9 @@ formar parte de un módulo de la aplicación:
     
     El nombre de esta clase, `WSClass`, se ha mantenido
     desde el comienzo del proyecto, cuando estos objetos
-    objetos solo tenían acceso al canal \gls{ws}. En
-    futuras versiones de la aplicación, debe cambiarse el
-    nombre para que sea más descriptivo.
+    solo tenían acceso al canal \gls{ws}. En futuras
+    versiones de la aplicación, debe cambiarse el nombre
+    para que sea más descriptivo.
 
 `BoilerUIModule`
 
@@ -376,7 +383,7 @@ por `LoginHandler`; y los requerimientos de conexión
 Los códigos a los que hacen referencia los requerimientos de
 código, son secuencias de cinco caracteres alfanuméricos y
 provienen de códigos \gls{qr} o \gls{nfc} (en las secciones
-[Lógica de acceso] y [Flujo de la aplicación] se dan mas
+[Lógica de acceso] y [Flujo de la aplicación] se dan más
 detalles sobre el uso de los códigos). Existen dos tipos de
 código, los de sala (`'room'`) y los de asiento (`'seat'`).
 No es posible distinguir el tipo de código solamente con la
@@ -408,16 +415,16 @@ utilizan dependen de la forma en que se desee cargar el
 \gls{frontend} y esto a su vez depende de el tipo de
 requerimiento y el código utilizado. Este proceso está
 representado en la \cref{f_arq} con las flechas que entran y
-salen del bloque *GUIHandler*. Estas conexiones son las
+salen del bloque `GUIHandler`. Estas conexiones son las
 únicas de la figura que tienen flechas, indicando la
 dirección en la que fluye la información, desde los módulos
-pasando por GUIHandler y hasta el \gls{cliente} a través del
-protocolo HTTP. En este proceso, exceptuando el envío del
-requerimiento por parte del \gls{cliente}, la información
-solo fluye hacia el \gls{cliente}.
+pasando por `GUIHandler` y hasta el \gls{cliente}, a través
+del protocolo HTTP. En este proceso, exceptuando el envío
+del requerimiento, la información solo fluye hacia el
+\gls{cliente}.
 
 El \gls{frontend} de la aplicación está compuesto
-principalmente por paneles e indicadores (mas detalles en la
+principalmente por paneles e indicadores (más detalles en la
 sección [Interfaz Gráfica]). Los paneles pueden cargar
 componentes gráficos en la sección principal de la
 aplicación. Mientras los indicadores solo pueden cargar
@@ -435,7 +442,7 @@ Cuando el usuario aprieta el botón de autenticación con
 Google, se envía un requerimiento de autenticación
 (`/signin`) a `LoginHandler`. Utilizando los datos enviados
 con el requerimiento, `LoginHandler` redirecciona al cliente
-a una pagina de autenticación de Google. Una vez terminada
+a una página de autenticación de Google. Una vez terminada
 la autenticación, el \gls{cliente} envía un código generado
 por Google a `LoginHandler`. Con este código, `LoginHandler`
 puede acceder por su cuenta a los datos del usuario, crear
@@ -444,7 +451,7 @@ sesión con el secreto asignado al usuario y enviarlo al
 cliente. Una vez que el nuevo identificador de sesión es
 almacenado en el \gls{cliente}, el \gls{cliente} hace un
 nuevo requerimiento a `GUIHandler`. Esta vez, el
-\gls{frontend} si encontrará el identificador de sesión, y
+\gls{frontend} sí encontrará el identificador de sesión, y
 en vez de mostrar el panel `HomeLockingPanel`, se mostrará
 un panel de carga y comenzará el proceso de conexión
 \gls{ws}.
@@ -469,7 +476,7 @@ a la aplicación. De esta forma, el usuario, su rol (profesor
 alumno o ninguno) y la ubicación del usuario, quedan
 asociados a esa instancia de `MSGHandler`. Si todos los
 datos enviados en el mensaje `'session.start'` son
-correctos, y el identificador se sesión no ha expirado, el
+correctos, y el identificador de sesión no ha expirado, el
 mensaje es respondido con un mensaje de tipo
 `'session.start.ok'`. En caso contrario, se responde con el
 mensaje de tipo `'logout'`, el cual fuerza al \gls{frontend}
@@ -488,7 +495,7 @@ propias sub-clases de `DBObject`, con el fin de definir
 nuevas colecciones para implementar nuevas funcionalidades
 en la aplicación. Las nuevas sub-clases de `DBObject` pueden
 registrarse en la capa de interfaz con la base de datos,
-para que puedan ser usadas desde otros módulos. También
+para que puedan ser usadas desde otros módulos. También,
 pueden mantenerse de manera más privada dentro del módulo,
 dependiendo de lo que se desee implementar.
 
@@ -567,26 +574,230 @@ Gráfica].
 Organización del código
 -----------------------
 
-Lorem
+El código de la aplicación se maneja utilizando el sistema
+de control de versiones Git. Se ha decidido organizar el
+desarrollo en tres repositorios Git diferentes.
+
+El primer repositorio de llama TornadoBoiler y su objetivo
+es proveer de una base estandarizada de código para
+proyectos hechos con el \gls{framework} Tornado. Aquí se
+define una interfaz gráfica básica e infraestructura para
+crear módulos gráficos de \gls{frontend}.
+
+Utilizando TornadoBoiler como base de código, se ha creado
+TornadoBoxes. Este repositorio tiene por objetivo entregar
+una base de código para aplicaciones \gls{web} modulares, de
+una sola carga y que se comuniquen con el servidor
+utilizando \gls{ws}. Este proyecto define una interfaz
+gráfica compuesta por un menú principal que permite acceder
+a diferentes paneles con contenido organizado en bloques
+(*Boxes*). Además, existen indicadores en la parte superior
+derecha de la interfaz.
+
+Finalmente, basándose en TornadoBoxes, se crea el
+repositorio en el que se mantiene la aplicación
+correspondiente a este trabajo. El cual implementa toda la
+funcionalidad orientada a los usuarios finales.
+
+Las ventajas de este tipo de organización, es que se puede
+reutilizar y mantener una misma misma base de código para
+múltiples proyectos. Además, cualquier actualización en un
+proyecto superior se puede propagar a proyectos inferiores
+de manera casi automática.
 
 Interfaz Gráfica
 ----------------
 
-Lorem
+La interfaz de la aplicación está organizada en módulos de
+diferentes tipos: paneles, paneles bloqueantes e
+indicadores. Cada uno de estos módulos se puede instanciar
+en un área de la pantalla. Existen principalmente dos áreas.
+La cabecera de la aplicación, que comprende una barra
+horizontal en la parte superior y el área principal, que
+corresponde a todo el espacio inferior que no es utilizado
+por la cabecera. Las diferentes áreas se pueden apreciar en
+las capturas de la \cref{f_interfaz}.
 
-Lógica de acceso
-----------------
+![Capturas de la interfaz gráfica.\label{f_interfaz}
+ ](src/3-propuesta/fig/ui.pdf)
 
-Lorem
+Los paneles y los paneles bloqueantes son mostrados en el
+área principal. Solo un panel puede ser mostrado a la vez, y
+por lo tanto, ocupan toda el área principal. Suelen
+organizar sus contenidos internos en cajas (boxes heredadas
+de TornadoBoxes), que son áreas rectangulares pensadas para
+separar contenidos. La diferencia entre paneles y paneles
+bloqueantes radica en que el usuario puede cambiar entre los
+paneles utilizando el menú desplegable principal (captura b
+en la \cref{f_interfaz}), en el cual están listados todos
+los paneles, pero no lo paneles bloqueantes. Los paneles
+bloqueantes solo pueden ser mostrados programáticamente. Por
+ejemplo, cuando ocurre un evento, un error o se necesita la
+interacción inmediata del usuario. Cuando un panel
+bloqueante es mostrado, se esconde el botón que despliega al
+menú principal, evitando que el usuario pueda ignorar el
+panel (ver captura c en \cref{f_interfaz}). Solo se puede
+salir del estado de bloqueo de un panel bloqueante de manera
+programática. Por lo tanto esto depende de la programación
+del panel bloqueante. Generalmente se requiere que el
+usuario complete alguna acción para que el panel bloqueante
+desaparezca y se pueda volver a utilizar el menú principal.
+
+Los indicadores son principalmente botones que se muestran
+dentro de la cabecera de la aplicación a su lado derecho,
+como se muestra en todas las capturas de la
+\cref{f_interfaz}. Sirven como herramientas de acceso rápido
+o de notificación de eventos.
+
+Aparte de los componentes modulares, existe un componente
+general del sistema llamado burbuja de notificaciones. Los
+diferentes módulos pueden acceder de manera programática a
+la burbuja, con el fin de entregar información rápida, pero
+sin interrumpir al usuario (ver captura d en
+\cref{f_interfaz}). La burbuja tiene dos modos
+fundamentales: normal y error. La diferencia entre ellos, es
+que en el modo error la burbuja se muestra de color rojo.
 
 Flujo de la aplicación
 ----------------------
 
-\cref{dp1}, \cref{dp2}, \cref{dp3}, \cref{dp4}, \cref{dp5}
+El *flujo de la aplicación* hace referencia a las
+principales maneras que el usuario puede navegar por la
+aplicación. En esta sección se describen los dos flujos
+principales de la aplicación: flujo de profesor y flujo de
+alumno.
 
-\cref{dp2,dp3,dp5}
+El mecanismo de ingreso principal a la aplicación, es
+mediante códigos \gls{qr}/\gls{nfc}. La idea detrás de esto
+es que los usuarios no tengan que memorizar una dirección
+\gls{web} o tener instalada una forma de acceso en sus
+dispositivos. Además, al marcar lugares físicos con códigos
+\gls{qr}/\gls{nfc}, la aplicación puede aprovechar el
+conocimiento sobre el lugar en que está ubicado cada código
+para localizar a los usuarios. Existen dos tipos de código,
+los de sala y los de asiento. Los códigos de sala se deben
+pegar en la puerta de una sala donde se desee utilizar la
+aplicación. Y al escanearlos se ingresa a la aplicación en
+modo profesor. Mientras que los códigos de asiento deben ser
+pegados en cada asiento de una sala, y al escanearlos se
+ingresa en modo de alumno.
 
+###Flujo de profesor
 
+Cuando un profesor llega a una sala en la que desea dictar
+una clase, debe escanear el código ubicado en la puerta de
+la sala utilizando su celular. Haciendo esto entrará
+automáticamente a la aplicación. Y, suponiendo que ya se
+haya autenticado con Google en ese dispositivo, se mostrara
+una lista con los cursos que dicta. Si el curso que desea
+dictar no existe, es posible agregarlo en ese mismo momento
+introduciendo el nombre del curso. Cuando el profesor
+selecciona el curso que desea dictar, la aplicación
+automáticamente establece que en esa sala se está dictando
+el curso seleccionado.
+
+Luego el profesor ingresa a la sala y debe encender el
+computador para poder utilizar el proyector. Para cargar la
+aplicación en el computador, es necesario ingresar
+utilizando la dirección \gls{web} asociada. Al abrir y
+autenticarse en la aplicación, utilizando el computador, se
+detecta automáticamente que el profesor ya está dictando un
+curso. Gracias a esto, la aplicación puede cargarse en modo
+profesor y sabe qué curso se está dictando.
+
+Finalmente, el profesor puede cargar un archivo de
+presentación en el computador y así utilizar el proyector.
+Mientras que en el celular puede cargar el panel de control
+remoto para controlar el flujo de la presentación. Además,
+si una diapositiva tiene asociada una pregunta, esta puede
+ser lanzada utilizando el control remoto.
+
+###Flujo de alumno
+
+Cuando un alumno llega a la sala y se sienta en su puesto,
+puede escanear el código el código \gls{qr}/\gls{nfc}
+asociado. Al hacerlo, y asumiendo que el alumno ya esta
+autenticado en ese dispositivo con una cuenta de Google, se
+muestran todos los cursos que se están dictando actualmente
+en esa sala [^multiples_cursos]. Cada curso se muestra con
+el nombre del profesor que lo dicta. Al seleccionar un curso
+de la lista, el alumno entra a la aplicación y podrá recibir
+las preguntas que sean lanzadas en ese curso.
+
+[^multiples_cursos]: La afirmación de que puedan dictarse
+    múltiples cursos en una sala puede parecer un error. Sin
+    embargo, esta ha sido una decisión de diseño bastante
+    meditada y se ha concluido que es una de las mejores
+    maneras de resolver varios problemas de diseño.
+
+Lógica de acceso
+----------------
+
+En la sección [Arquitectura general] se describe cómo el
+\gls{frontend} puede ser cargado en diferentes modos:
+profesor, alumno o ninguno. Durante el diseño de la
+aplicación se ha tomado en consideración las diferentes
+posibilidades que puedan surgir cuando un usuario utiliza
+varios terminales para ingresar en diferentes modos. Con el
+fin de garantizar un funcionamiento consistente se ha
+establecido que cada usuario puede estar solo en uno de los
+siguientes estados:
+
+*   Ninguno (n)
+*   Alumno (s)
+*   Alumno asistiendo a un curso (S)
+*   Profesor (t)
+*   Profesor dictando un curso (T)
+
+Luego se elaboró la máquina de estados que se muestra en la
+\cref{f_fst}. En la figura se muestran además las posibles
+transiciones. Estas pueden ocurrir como respuesta a uno de
+los siguientes eventos:
+
+*   Salir de la aplicación (o)
+*   Abrir la aplicación en modo ninguno (n)
+*   Abrir la aplicación en modo alumno (s)
+*   Abrir la aplicación en modo alumno en una sala distinta
+    de la actual (s*)
+*   Comenzar a asistir a un curso como alumno (S)
+*   Abrir la aplicación en modo profesor (t)
+*   Abrir la aplicación en modo profesor en una sala
+    distinta de la actual (t*)
+*   Comenzar a dictar un curso como profesor (T)
+
+![Máquina de estados finitos para los estados de usuario.
+  \label{f_fst}](src/3-propuesta/fig/fsm.pdf)
+
+Una vez establecidos los estados y los eventos que gatillan
+las transiciones, fue necesario crear una tabla de
+transiciones y detallar qué tipo de acciones se deben
+ejecutar para cada transición. Sin entrar en mayor detalle,
+para cada transición es necesario ejecutar una combinación
+de las siguientes acciones:
+
+*   (DI) Decrease Instances
+*   (II) Increase Instances
+*   (RAC) Room Assing Course
+*   (RDC) Room Deasign Course
+*   (UAC) User Assign Course
+*   (UDC) User Deasign Course
+*   (US) Use seat
+*   (LS) Leave Seat
+*   (LOI) Logout Other Instances
+*   (RTV) Redirect to Teacher View
+*   (LC) Load Course
+*   (LR) Load Room
+
+De esta forma se implementan reglas del tipo: si un usuario
+tiene activada la aplicación como alumno y abre la
+aplicación en otro dispositivo, la sesión del primer
+dispositivo debe cerrarse. O: Cuando un usuario tiene
+abierta la aplicación en modo profesor e ingresa en modo
+ninguno con un segundo dispositivo, el segundo dispositivo
+debe cambiar a modo profesor.
+
+[Arquitectura general]: #arquitectura-general
+[Arquitectura de módulos]: #arquitectura-de-módulos
 [Lógica de acceso]: #lógica-de-acceso
 [Flujo de la aplicación]: #flujo-de-la-aplicación
 [Interfaz Gráfica]: #interfaz-gráfica

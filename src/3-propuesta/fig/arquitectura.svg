@@ -270,11 +270,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.0508907"
-     inkscape:cx="300"
-     inkscape:cy="308.00003"
+     inkscape:zoom="1.7364327"
+     inkscape:cx="186.09565"
+     inkscape:cy="459.40136"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="layer3"
      showgrid="true"
      units="px"
      showguides="true"
@@ -372,7 +372,8 @@
      inkscape:label="Capa 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-252.362)">
+     transform="translate(0,-252.362)"
+     sodipodi:insensitive="true">
     <g
        id="g4524">
       <rect
@@ -1357,8 +1358,7 @@
   <g
      inkscape:groupmode="layer"
      id="layer3"
-     inkscape:label="Labels"
-     sodipodi:insensitive="true">
+     inkscape:label="Labels">
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#5f5448;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
@@ -1374,15 +1374,15 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#5f5448;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="-304.3912"
-       y="76.396484"
+       x="-308.00266"
+       y="86.984154"
        id="text4610-7"
        sodipodi:linespacing="125%"
        transform="matrix(0,-1,1,0,0,0)"><tspan
          sodipodi:role="line"
          id="tspan4612-4"
-         x="-304.3912"
-         y="76.396484">HTTP</tspan></text>
+         x="-308.00266"
+         y="86.984154">HTTP</tspan></text>
     <ellipse
        style="opacity:1;fill:#5f5448;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="path4431-63-2-2-9"
