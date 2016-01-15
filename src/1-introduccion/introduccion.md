@@ -65,14 +65,15 @@ pero no son muy útiles en un paradigma de enseñanza activa y
 colaborativa. Una alternativa para resolver este problema
 son las llamadas salas SCALE-UP. SCALE-UP es el acrónimo
 para “Student-Centered Active Learning Environment with
-Upside- down Pedagogies”. Las salas SCALE-UP son ambientes
-creados para facilitar los métodos de enseñanza Active
-Learning en un entorno tipo taller.
+Upside-down Pedagogies” \cite{scaleup-web}. Las salas
+SCALE-UP son ambientes creados para facilitar los métodos de
+enseñanza Active Learning en un entorno tipo taller.
 
 Comúnmente estas salas tienen mesas redondas en las que los
 alumnos trabajan de forma colaborativa. En cada mesa se
 sientan grupos de alumnos, formando comunidades de
-aprendizaje. Las actividades a desarrollar pueden ser
+aprendizaje. En la \cref{f_sala} se muestra un diagrama de
+una sala SCALE-UP. Las actividades a desarrollar pueden ser
 pequeñas tareas prácticas, ejercicios de desarrollo,
 actividades tipo laboratorio o solución de problemas. El
 profesor no es el centro de la clase, sino que se dedica a
@@ -83,6 +84,9 @@ otras palabras, el profesor debe interactuar continuamente
 con los alumnos, guiándolos, recibiendo retroalimentación
 del progreso de los grupos y organizando interacciones entre
 alumnos.
+
+![Diagrama de una sala SCALE-UP.\label{f_sala}
+ ](src/1-introduccion/fig/sala.pdf)
 
 SCALE-UP es especialmente interesante debido a la creciente
 popularidad que ha tenido entre establecimientos
@@ -113,7 +117,7 @@ enseñanza. Lo cual permite realizar un progreso real en el
 área de la educación. Hoy la enseñanza científica utiliza
 estrategias de aprendizaje activo y métodos de enseñanza que
 han sido probados sistemáticamente y que han demostrado
-poder llegar a diversos tipos de estudiante.
+ser efectivos en diversos tipos de estudiante.
 \cite{handelsman}
 
 [f_mapa]: src/1-introduccion/fig/mapa.pdf
@@ -137,7 +141,9 @@ La tecnología móvil está cambiando la forma en que los seres
 humanos se comunican, socializan, trabajan y se organizan.
 La adopción global de teléfonos móviles inteligentes ha
 crecido desde un 4% en 2008 a un 44% en 2015. Y se espera
-que llegue a un 65% para el año 2020 \cite{gsmai}.
+que llegue a un 65% para el año 2020 (porcentajes con
+respecto al total de conexiones a internet móvil)
+\cite{gsmai}.
 
 Este enorme crecimiento en la utilización de los teléfonos
 inteligentes está sustentado en el valor que los usuarios
@@ -170,19 +176,19 @@ ejecutarse en cualquier dispositivo que soporte el estándar
 (no solo teléfonos móviles).
 
 Una parte fundamental de los estándares \gls{web} es el
-protocolo de comunicación HTTP, que sirve para distribuir
-contenidos a través de internet. Este protocolo permite la
-descarga de aplicaciones en cuestión de segundos y el acceso
-de las aplicaciones a fuentes de datos remotas a través de
-internet. El modelo de distribución de aplicaciones
-\gls{web} se diferencia del modelo tradicional, en que es
-bajo demanda y la aplicación no permanece instalada en el
-\gls{cliente}. Mientras que con el modelo tradicional hay
-que instalar previamente una aplicación para poder usarla.
-Además, la persona que publica la aplicación tiene que
-registrarla en una tienda de aplicaciones. Es por esto que
-acceder a una aplicación \gls{web} suele ser más rápido y
-conveniente.
+protocolo de comunicación \gls{http}, que sirve para
+distribuir contenidos a través de internet. Este protocolo
+permite la descarga de aplicaciones en cuestión de segundos
+y el acceso de las aplicaciones a fuentes de datos remotas a
+través de internet. El modelo de distribución de
+aplicaciones \gls{web} se diferencia del modelo tradicional,
+en que es bajo demanda y la aplicación no permanece
+instalada en el \gls{cliente} (teléfono o computador).
+Mientras que con el modelo tradicional hay que instalar
+previamente una aplicación para poder usarla. Además, la
+persona que publica la aplicación tiene que registrarla en
+una tienda de aplicaciones. Es por esto que acceder a una
+aplicación \gls{web} suele ser más rápido y conveniente.
 
 Los estándares \gls{web} se crearon como un modelo de
 distribución de documentos de texto. Sin embargo con el
@@ -202,43 +208,28 @@ Siendo las dos últimas muy interesantes, ya que han ocupado
 un lugar que antes estaba reservado solo para aplicaciones
 nativas.
 
-Temas a Tratar
---------------
+Creación de Aplicación Web para Aulas SCALE-UP
+----------------------------------------------
 
-El principal tema a tratar durante este trabajo es la
-utilización de las últimas tecnologías \gls{web} para
-mejorar la interacción entre los actores en una sala SCALE-
-UP. Este tema da lugar a dos grupos importantes de preguntas
-que deben ser respondidas durante el trabajo.
+La situación descrita en las secciones anteriores deja en
+evidencia la oportunidad de desarrollar una aplicación
+que permita potenciar el uso de las salas SCALE-UP y que a
+su vez aproveche las nuevas tecnologías \gls{web}. Poniendo
+énfasis en el uso de los teléfonos inteligentes que gran
+parte de la población posee.
 
-El primero tiene que ver con “mejorar la interacción entre
-los actores en una sala SCALE-UP”:
-
--   ¿Cómo se pueden mejorar las interacciones?
--   ¿Qué opinan al respecto los profesores?
--   ¿Qué opinan los alumnos?
--   ¿Cómo es posible aumentar el impacto de la labor del
-    profesor en este tipo de salas?
--   ¿Cómo es posible mejorar la interacción entre los
-    alumnos?
--   ¿Qué funcionalidades debe tener una solución de software
-    que mejore la interacción?
-
-El segundo grupo de preguntas tiene relación con el aspecto
-técnico de la implementación de un software que cumpla con
-las características que se desean:
-
--   ¿Qué \gls{framework} es el más adecuado para implementar
-    la aplicación?
--   ¿Cómo se logrará la comunicación en tiempo real entre
-    los actores?
--   ¿Cuál es la mejor manera de crear una interfaz de
-    usuario para esta aplicación?
--   ¿Cómo se logrará que la aplicación sea fácil e intuitiva
-    de usar?
--   ¿Cómo se logrará que la aplicación funcione
-    correctamente en dispositivos móviles?
--   ¿De qué manera se gestionarán los distintos usuarios y
-    grupos?
--   ¿Se necesitará hardware adicional como etiquetas
-    \gls{nfc}/\gls{qr} o un \gls{servidor}?
+Este trabajo trata sobre la utilización de las últimas
+tecnologías \gls{web} para mejorar la interacción entre los
+actores en una sala SCALE- UP. En el [capítulo
+2](#estado-del-arte) se muestra brevemente cuál es la
+situación actual del software orientado a la educación. En
+el [capítulo 3](#propuesta) se describe en detalle la
+solución de software desarrollada en este trabajo, desde el
+levantamiento de requerimientos hasta la descripción de la
+interfaz gráfica. Luego, en el [capítulo 4](#resultados) se
+detalla el estado actual del proyecto y los resultados
+obtenidos al someter al software a distintas pruebas.
+Finalmente, en el [capítulo
+5](#contribuciones-del-presente-trabajo) se explica cuales
+son las contribuciones directas e indirectas del presente
+trabajo.

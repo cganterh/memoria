@@ -1,7 +1,7 @@
 Resultados
 ==========
 
-Estado actual del proyecto
+Estado Actual del Proyecto
 --------------------------
 
 En septiembre del 2014 se comenzó con la programación del
@@ -41,7 +41,7 @@ proyecto de código abierto. Las actualizaciones se publican
 regularmente en la \gls{web} \url{http://github.com}, que es
 utilizada como repositorio central. Además, se cuenta con
 dos colaboradores. Siendo uno de ellos pagado con los fondos
-que se adjudicaron a este proyecto. (más detalles en la
+que se adjudicaron a este proyecto (más detalles en la
 sección [Concurso de Investigación OEA]).
 
 Una versión estable del proyecto es mantenida en
@@ -53,16 +53,16 @@ escrita en inglés.
 
 [Concurso de Investigación OEA]: #concurso-de-investigación-oea
 
-Pruebas realizadas
+Pruebas Realizadas
 ------------------
 
 Durante el desarrollo del proyecto se han hecho pruebas de
 manera continua, con el objetivo de encontrar errores de
 manera temprana y verificar la estabilidad y rendimiento de
-la aplicación. En las siguientes sub-secciones de detallan
+la aplicación. En las siguientes sub-secciones se detallan
 las pruebas más importantes que se han llevado a cabo.
 
-###Versión estable de producción
+###Versión Estable de Producción
 
 Durante la mayor parte del desarrollo se ha mantenido en
 continuo funcionamiento y de manera pública una versión
@@ -76,29 +76,29 @@ Utilizando este método se han logrado identificar una
 considerable cantidad de errores que hoy ya se encuentran
 resueltos.
 
-###Prueba de rendimiento en una clase real
+###Prueba de Rendimiento en una Clase Real
 
 Se ha probado la aplicación durante una clase con
 aproximadamente 15 personas. Durante esta prueba se
 validaron los mecanismos de acceso y se le pidió a los
 alumnos que generaran una considerable cantidad de tráfico,
 utilizando el módulo llamado *No entiendo*. Este módulo
-permite notificar al profesor cuándo un alumno no entiende.
+permite notificar al profesor cuando un alumno no entiende.
 Presionando repetidamente este botón se puede generar una
 cantidad de tráfico.
 
 Esta es más bien una prueba cualitativa, que sirvió para
 determinar que alrededor de 15 personas, generando tráfico
 constantemente, no son capaces de producir un colapso de las
-comunicaciones de la aplicación. Además, el servidor
+comunicaciones de la aplicación. Además, el \gls{servidor}
 utilizado en esta prueba estaba localizado en EEUU. Por lo
-que se puede asegurar que un servidor local tendría mucho
-mejor rendimiento.
+que se puede asegurar que un \gls{servidor} local tendría
+mucho mejor rendimiento.
 
-###Prueba de RTT en una conexión de mala calidad
+###Prueba de RTT en una Conexión de Mala Calidad
 
 Se han capturado datos del tiempo en que un mensaje \gls{ws}
-puede ir y volver a un servidor localizado en EEUU, durante
+puede ir y volver a un \gls{servidor} localizado en EEUU, durante
 un paseo por los lugares con peor señal móvil de la UTFSM.
 El round-trip time fue medido utilizando los mensajes ping y
 pong del protocolo \gls{ws}.

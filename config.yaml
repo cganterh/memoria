@@ -23,7 +23,7 @@ author: Cristóbal Edmundo Ganter Horst
 degree: Ingeniero Civil Electrónico
 professor: Werner Creixell
 month: Enero
-year: 2015
+year: 2016
 advertencia: true
 numbersections: true
 toc-depth: 1
@@ -41,4 +41,5 @@ main_content:
     -   src/5-contribuciones/contribuciones.tex
     -   src/6-conclusiones/conclusiones.tex
 anexos:
+    -   src/anexos/anexoA.tex
 ...

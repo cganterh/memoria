@@ -1,23 +1,24 @@
-Estado del arte
+Estado del Arte
 ===============
 
 Existe una gran cantidad de software de apoyo a la
 educación. Algunos proyectos buscan simplemente ilustrar
 conceptos en una materia específica. Otros se concentran en
-solo una disciplina como la física, la química, o el
-lenguaje. Por otra parte, existen los sistemas de gestión en
-educación. Éstos pueden cubrir una gran variedad de
-necesidades, tales como la administración de cursos,
-administración de contenidos, la inscripción de ramos o la
-evaluación de los alumnos. Incluso hay software que intenta
-experimentar incluyendo nuevas formas de enseñar, como es el
-caso de la \gls{lud}.
+solo una disciplina como física, química, o lenguaje. Por
+otra parte, existen los sistemas de gestión en educación.
+Éstos pueden cubrir una gran variedad de necesidades, tales
+como la administración de cursos, administración de
+contenidos, la inscripción de ramos o la evaluación de los
+alumnos. Incluso hay software que intenta experimentar
+incluyendo nuevas formas de enseñar, como es el caso de la
+\gls{lud} \cite{hamari}.
 
 Entre los sistemas de gestión de aprendizaje más populares
 la gran mayoría cubren las necesidades de organización de
 cursos y distribución de contenidos. Estas soluciones tienen
-mucha similitud con la plata forma Moodle. La cual es una de
-las soluciones más populares en esta área.
+mucha similitud con la plataforma Moodle, la cual es una de
+las soluciones más populares en esta área. Destacando por
+ser una aplicación de código abierto.
 
 Con respecto a las aplicaciones de apoyo a la interacción
 dentro de la sala, que es la categoría en que se clasifica
@@ -31,12 +32,13 @@ estudiantes tengan un dispositivo \cite{plickers}. Plickers
 permite que los estudiantes respondan preguntas de
 alternativas levantando tarjetas impresas con códigos. Luego
 el profesor utiliza la aplicación móvil para leer los
-códigos y obtener las respuestas de manera rápida.
+códigos a través de la cámara y obtener las respuestas de
+manera rápida.
 
 Sólo se ha encontrado una aplicación, llamada Learning
 Catalytics, cuyo objetivo es el apoyo a la interacción
 dentro de la sala en un sentido más amplio. A grandes
-rasgos ésta aplicación cubre las siguientes funciones:
+rasgos esta aplicación cubre las siguientes funciones:
 
 -   Comunicación entre alumnos y profesor, durante y después
     de clases.

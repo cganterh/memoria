@@ -184,9 +184,14 @@ $endif$
 \patchcmd{\listoftables}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
 \patchcmd{\listoffigures}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{}
 
+\usepackage[titletoc]{appendix}
 \usepackage{caption}
 \usepackage{cleveref}
 \crefname{dp}{principio de diseño}{principios de diseño}
+
+\newcommand{\vcenteredinclude}[1]{\begingroup
+\setbox0=\hbox{\includegraphics{#1}}%
+\parbox{\wd0}{\box0}\endgroup}
 
 \begin{document}
     \pagenumbering{roman}
@@ -221,7 +226,7 @@ $endif$
         \fontsize{12pt}{14.4pt}\selectfont
         \MakeUppercase{
             Memoria de Titulación para optar al título de
-            $degree$.
+            $degree$
         }
 
         \fontsize{12pt}{14.4pt}\selectfont
@@ -301,12 +306,16 @@ $endif$
         \pagebreak
     $endfor$
 
+    $if(anexos)$
+        \begin{appendices}
+            $for(anexos)$
+                \input{$anexos$}
+            $endfor$
+        \end{appendices}
+    $endif$
+
     $if(bibliografia)$
         \input{$bibliografia$}
         \pagebreak
     $endif$
-
-    $for(anexos)$
-        \input{$anexos$}
-    $endfor$
 \end{document}
