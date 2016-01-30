@@ -94,6 +94,8 @@ compuesto por cinco caracteres alfanuméricos. Desde aquí en
 adelante se utilizará la palabra *código* para referirse al
 identificador único, a no ser que se indique lo contrario.
 
+\pagebreak
+
 ###Arquitectura General
 
 La arquitectura de la aplicación está compuesta por un
@@ -226,6 +228,8 @@ forma, los requerimientos vacíos y de código (`/` y
 requerimientos de autenticación (`/singin`) son atendidos
 por objetos `LoginHandler`; y los requerimientos de conexión
 \gls{ws} son atendidos por objetos `MSGHandler`.
+
+\pagebreak
 
 La función de `GUIHandler` es enviar el \gls{frontend} a los
 \glspl{cliente}. Existen tres formas en las que se puede
@@ -520,6 +524,8 @@ modo profesor. Mientras que los códigos de asiento deben ser
 pegados en cada asiento de una sala, y al escanearlos se
 ingresa en modo de alumno.
 
+\pagebreak
+
 ###Flujo de Profesor
 
 Cuando un profesor llega a una sala en la que desea dictar
@@ -568,6 +574,8 @@ preguntas que sean lanzadas en ese curso.
     meditada y se ha concluido que es una de las mejores
     maneras de resolver varios problemas de diseño.
 
+\pagebreak
+
 Lógica de Acceso
 ----------------
 
@@ -606,6 +614,8 @@ los siguientes eventos:
 ![Máquina de estados finitos para los estados de usuario.
   \label{f_fst}](src/3-propuesta/fig/fsm.pdf)
 
+\pagebreak
+
 Una vez establecidos los estados y los eventos que gatillan
 las transiciones, fue necesario crear una tabla de
 transiciones y detallar qué tipo de acciones se deben
@@ -613,18 +623,18 @@ ejecutar para cada transición. Sin entrar en mayor detalle,
 para cada transición es necesario ejecutar una combinación
 de las siguientes acciones:
 
-*   (DI) Decrease Instances
-*   (II) Increase Instances
-*   (RAC) Room Assing Course
-*   (RDC) Room Deasign Course
-*   (UAC) User Assign Course
-*   (UDC) User Deasign Course
-*   (US) Use seat
-*   (LS) Leave Seat
-*   (LOI) Logout Other Instances
-*   (RTV) Redirect to Teacher View
-*   (LC) Load Course
-*   (LR) Load Room
+*   \(DI) Decrease Instances
+*   \(II) Increase Instances
+*   \(RAC) Room Assing Course
+*   \(RDC) Room Deasign Course
+*   \(UAC) User Assign Course
+*   \(UDC) User Deasign Course
+*   \(US) Use seat
+*   \(LS) Leave Seat
+*   \(LOI) Logout Other Instances
+*   \(RTV) Redirect to Teacher View
+*   \(LC) Load Course
+*   \(LR) Load Room
 
 De esta forma se implementan reglas del tipo: si un usuario
 tiene activada la aplicación como alumno y abre la

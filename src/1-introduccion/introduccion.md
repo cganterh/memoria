@@ -122,6 +122,8 @@ ser efectivos en diversos tipos de estudiante.
 
 [f_mapa]: src/1-introduccion/fig/mapa.pdf
 
+\pagebreak
+
 Tecnología Web Móvil
 --------------------
 
