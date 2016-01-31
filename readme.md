@@ -1,64 +1,30 @@
-Template de memoria ELO UTFSM
-=============================
+Aplicación Móvil para Aprendizaje Activo en Aulas SCALE-UP
+==========================================================
 
-Este template cumple con las normas del departamento de
-electrónica de la UTFSM para los trabajos de memoria. Está
-pensado para escribir la memoria en Markdown(Pandoc), sin
-embargo también se puede usar para escribir en LaTeX (ver
-comentarios sobre el uso de LaTeX mas abajo).
+Las salas SCALE-UP (“Student-Centered Active Learning
+Environment with Upside-down Pedagogies”) están pensadas
+para brindar un ambiente propicio para el aprendizaje activo
+y colaborativo. Estas técnicas de enseñanza se basan
+fuertemente en la interacción entre alumnos que tengan
+comprensiones diferentes de un mismo concepto. Lograr esto
+en cursos numerosos es un desafío y para ello se necesitan
+tecnologías de apoyo.
 
-Uso
----
+En este trabajo se desarrolla una plataforma TIC para ser
+utilizada en salas SCALE-UP. La plataforma proporcionará un
+ambiente de trabajo para actividades en la clase. Mediante
+el monitoreo de las respuestas de los estudiantes la
+plataforma podrá identificar aquellos alumnos que tengan
+respuestas diferentes. Con esto se logrará incentivar el
+debate entre los alumnos. El diseño demandará que la
+aplicación pueda comunicarse bidireccionalmente con los
+clientes (dispositivos móviles), identificar alumnos,
+obtener su posición en la sala y brindar un ambiente de
+trabajo para el mayor número de actividades diferentes.
 
-El template funciona sin problemas en Ubuntu 15.10. NO
-funciona en Ubuntu 14.04. No he probado otras versiones de
-Ubuntu/Linux.
+Template
+========
 
-### Ubuntu 15.10
-
-####Requisitos
-
--   Tener activado el repositorio Multiverse.
--   Make 4.0.
--   Git.
--   Sudo.
-
-####Instalación
-
-    git clone https://github.com/cganterh/template_memoria.git
-    cd template_memoria
-    make
-
-Esto debiera instalar todas las dependencias y compilar el
-documento de ejemplo.
-
-####Configuración
-
-Para configurar tu proyecto modifica el archivo
-`config.yaml`.
-
-LaTeX
------
-
-Si quieres escribir con LaTeX no hay problema! Solo tienes
-que modificar los archivos `makefile` que hay en cada
-carpeta dentro de `src` para que tus archivos `.tex` no se
-eliminen cuando hagas un `make clean`. Además es conveniente
-modificar los archivos ocultos `.gitignore` dentro de `src`
-para que tus archivos `.tex` no sean ignorados por `git`.
-
-Otra opción, más fácil pero menos limpia, es escribir LaTeX
-directamente en los archivos `.md`. Esto funciona debido a
-que Pandoc acepta código LaTeX dentro de los archivos de
-Markdown y no lo modifica al compilar desde Markdown a
-LaTeX.
-
-Colaboración
-------------
-
-Los pull requests son bienvenidos! Sería genial si alguien
-se motivara con un fork para otras carreras/universidades.
-
-Además siempre es útil que prueben el template en más
-sistemas para poder agregarlos a la lista de distribuciones
-soportadas.
+El tempate que se usó para elaborar este escrito se puede
+encontrar en
+<https://github.com/TelematicaUSM/TemplateMemoria>.

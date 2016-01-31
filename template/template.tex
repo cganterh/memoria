@@ -160,6 +160,9 @@ $if(definiciones)$
     \loadglsentries{$definiciones$}
     \makeglossaries
 
+    % Workaround from: <http://tex.stackexchange.com/
+    % questions/109122/latex-glossaries-hyperref-link-
+    % only-the-first-occurance-of-an-entry-in-each-sec#answer-283573>
     \renewcommand*{\glslinkcheckfirsthyperhook}{%
         \ifglsused{\glslabel}%
         {%
@@ -187,8 +190,10 @@ $endif$
 \usepackage[titletoc]{appendix}
 \usepackage{caption}
 \usepackage{cleveref}
-\crefname{dp}{principio de diseño}{principios de diseño}
 
+
+% Workaround from: <http://tex.stackexchange.com/questions/433/
+% vertically-center-text-and-image-in-one-line#answer-17101>
 \newcommand{\vcenteredinclude}[1]{\begingroup
 \setbox0=\hbox{\includegraphics{#1}}%
 \parbox{\wd0}{\box0}\endgroup}
