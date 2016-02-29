@@ -35,10 +35,14 @@ el profesor utiliza la aplicación móvil para leer los
 códigos a través de la cámara y obtener las respuestas de
 manera rápida.
 
+\pagebreak[4]
+
 Sólo se ha encontrado una aplicación, llamada Learning
 Catalytics, cuyo objetivo es el apoyo a la interacción
 dentro de la sala en un sentido más amplio. A grandes
 rasgos esta aplicación cubre las siguientes funciones:
+
+\pagebreak[3]
 
 -   Comunicación entre alumnos y profesor, durante y después
     de clases.

@@ -25,9 +25,13 @@ comandos comunes e inyectar código mientras la aplicación
 está en funcionamiento. Haciendo más fácil la depuración de
 errores.
 
+\pagebreak[2]
+
 Hoy la aplicación cuenta con los módulos necesarios para
 crear y utilizar cursos y presentaciones. Sin embargo queda
 mucho por hacer:
+
+\pagebreak[3]
 
 *   Se deben desarrollar nuevos módulos para complementar
     los que ya existen. Como por ejemplo el módulo de
@@ -43,7 +47,9 @@ mucho por hacer:
     código es actualmente de $0,24$. Lo cual es aún muy
     poco, siendo deseable una razón mayor a $1$.
 
-*   Se deben desarrollar el módulo de preguntas y agregar
+\pagebreak[4]
+
+*   Se debe desarrollar el módulo de preguntas y agregar
     tipos nuevos de pregunta, con el fin de sacar provecho a
     los dispositivos móviles actuales. Los tipos de pregunta
     que se podrían implementar son alternativas, de dibujo,

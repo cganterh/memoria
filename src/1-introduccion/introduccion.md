@@ -88,6 +88,8 @@ alumnos.
 ![Diagrama de una sala SCALE-UP.\label{f_sala}
  ](src/1-introduccion/fig/sala.pdf)
 
+\pagebreak
+
 SCALE-UP es especialmente interesante debido a la creciente
 popularidad que ha tenido entre establecimientos
 educacionales. La \cref{f_mapa} muestra un mapa en el que se
@@ -122,7 +124,7 @@ ser efectivos en diversos tipos de estudiante.
 
 [f_mapa]: src/1-introduccion/fig/mapa.pdf
 
-\pagebreak
+\pagebreak[0]
 
 Tecnología Web Móvil
 --------------------

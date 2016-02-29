@@ -85,6 +85,8 @@ con la misma licencia que el trabajo original. Cualquier
 copia distribuida bajo estas licencias debe incluir el
 código fuente del software.
 
+\pagebreak[4]
+
 La diferencia entre *GNU Affero General Public License* y
 *GNU General Public License* radica en que, con la segunda,
 una persona puede hacer una modificación del software y

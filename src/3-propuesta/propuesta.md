@@ -23,10 +23,14 @@ También, se realizó una visita a una clase activa de física
 con el objetivo de tener un acercamiento a las actividades
 que se realizan en ellas.
 
+\pagebreak[4]
+
 ###Resultados del Levantamiento
 
 Del análisis de las encuestas y la visita a la clase activa,
 se llegó a las siguientes conclusiones:
+
+\pagebreak[3]
 
 1.  La aplicación debe poder mostrar diapositivas y videos.
 
@@ -51,6 +55,8 @@ se llegó a las siguientes conclusiones:
 8.  El sistema debe ser robusto a las pérdidas de conexión a
     internet.
 
+\pagebreak[2]
+
 Finalmente, se diseñó una serie de módulos mínimos que
 cumplieran con las necesidades actuales de las salas
 SCALE-UP. Estos módulos serán descritos en detalle en la
@@ -73,6 +79,8 @@ existe un código en la puerta de la sala, el cual debe ser
 utilizado por el profesor para abrir la aplicación y
 comenzar la clase.
 
+\pagebreak[0]
+
 En la \cref{f_acceso} se muestra un diagrama que representa
 el sistema descrito en el párrafo anterior. El cuadro del
 lado izquierdo representa una sala SCALE-UP, con sus mesas
@@ -94,7 +102,7 @@ compuesto por cinco caracteres alfanuméricos. Desde aquí en
 adelante se utilizará la palabra *código* para referirse al
 identificador único, a no ser que se indique lo contrario.
 
-\pagebreak
+\pagebreak[0]
 
 ###Arquitectura General
 
@@ -229,7 +237,7 @@ requerimientos de autenticación (`/singin`) son atendidos
 por objetos `LoginHandler`; y los requerimientos de conexión
 \gls{ws} son atendidos por objetos `MSGHandler`.
 
-\pagebreak
+\pagebreak[0]
 
 La función de `GUIHandler` es enviar el \gls{frontend} a los
 \glspl{cliente}. Existen tres formas en las que se puede
@@ -293,6 +301,8 @@ Esta vez, el \gls{frontend} sí encontrará el identificador
 de sesión, y en vez de mostrar el panel `HomeLockingPanel`,
 se mostrará un panel de carga y comenzará el proceso de
 conexión \gls{ws}.
+
+\pagebreak[4]
 
 Cuando se carga el \gls{frontend} en el \gls{cliente}, y ya
 existe un identificador de sesión, el \gls{frontend} envía
@@ -367,6 +377,8 @@ aplicación.
 ![Arquitectura de los módulos de la aplicación.
   \label{f_mod}](src/3-propuesta/fig/modulos.pdf)
 
+\pagebreak[4]
+
 El módulo *Diapositivas* permite cargar diapositivas en
 distintos formatos al sistema. Utiliza al módulo
 *Presentación* para poder mostrar un archivo de
@@ -386,8 +398,12 @@ alternativas. Además, es posible desplegar los resultados de
 las preguntas en el módulo *Presentación*, utilizando un
 botón instanciado en el módulo *Control Remoto*.
 
+\pagebreak[4]
+
 Existe un conjunto de módulos de sistema que no ha sido
 mencionado y no aparece en la \cref{f_mod}. Estos son:
+
+\pagebreak[3]
 
 *   Courses
 *   Router
@@ -524,7 +540,7 @@ modo profesor. Mientras que los códigos de asiento deben ser
 pegados en cada asiento de una sala, y al escanearlos se
 ingresa en modo de alumno.
 
-\pagebreak
+\pagebreak[0]
 
 ###Flujo de Profesor
 
@@ -574,7 +590,7 @@ preguntas que sean lanzadas en ese curso.
     meditada y se ha concluido que es una de las mejores
     maneras de resolver varios problemas de diseño.
 
-\pagebreak
+\pagebreak[4]
 
 Lógica de Acceso
 ----------------
@@ -614,7 +630,7 @@ los siguientes eventos:
 ![Máquina de estados finitos para los estados de usuario.
   \label{f_fst}](src/3-propuesta/fig/fsm.pdf)
 
-\pagebreak
+\pagebreak[4]
 
 Una vez establecidos los estados y los eventos que gatillan
 las transiciones, fue necesario crear una tabla de
@@ -622,6 +638,8 @@ transiciones y detallar qué tipo de acciones se deben
 ejecutar para cada transición. Sin entrar en mayor detalle,
 para cada transición es necesario ejecutar una combinación
 de las siguientes acciones:
+
+\pagebreak[3]
 
 *   \(DI) Decrease Instances
 *   \(II) Increase Instances

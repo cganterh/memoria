@@ -36,6 +36,8 @@ El código existente actualmente provee la suficiente
 infraestructura de forma que resulte rápido programar nuevos
 módulos.
 
+\pagebreak[4]
+
 El proyecto desde sus inicios se ha trabajado como un
 proyecto de código abierto. Las actualizaciones se publican
 regularmente en la \gls{web} \url{http://github.com}, que es
